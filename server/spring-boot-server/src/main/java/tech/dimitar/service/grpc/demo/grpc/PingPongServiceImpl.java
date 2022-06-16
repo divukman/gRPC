@@ -11,11 +11,11 @@ public class PingPongServiceImpl extends PingPongServiceGrpc.PingPongServiceImpl
     @Override
     public void ping(
             PingRequest request, StreamObserver<PongResponse> responseObserver) {
-        String ping = new StringBuilder()
-                .append("pong")
+        String pong = new StringBuilder()
+                .append("pong response")
                 .toString();
         PongResponse response = PongResponse.newBuilder()
-                .setPong(ping)
+                .setPong(pong)
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
